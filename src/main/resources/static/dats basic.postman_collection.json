@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "924fe8f6-e2cf-4a22-9d6a-70a3f96f2b02",
+		"name": "dats basic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22176554"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/pers/view",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pers/view",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pers",
+						"view"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/master/delete/9",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/master/delete/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"master",
+						"delete",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pers/add?persId=8&persName=surandash",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pers/add?persId=8&persName=surandash",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pers",
+						"add"
+					],
+					"query": [
+						{
+							"key": "persId",
+							"value": "8"
+						},
+						{
+							"key": "persName",
+							"value": "surandash"
+						}
+					]
+				},
+				"description": "create"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pers/update?id=8&newName=Lamba",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pers/update?id=8&newName=Lamba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pers",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8"
+						},
+						{
+							"key": "newName",
+							"value": "Lamba"
+						}
+					]
+				},
+				"description": "update"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pers/delete?id=8",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pers/delete?id=8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pers",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8"
+						}
+					]
+				},
+				"description": "delete"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pto/view",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pto/view",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pto",
+						"view"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pto/draft",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"armyNo\": \"IC3422\",\r\n    \"createdBy\": \"IC1111\",\r\n    \"gp\": \"A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pto/draft",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pto",
+						"draft"
+					],
+					"query": [
+						{
+							"key": "armyNo",
+							"value": "IC3333",
+							"disabled": true
+						},
+						{
+							"key": "loggedInArmyNo",
+							"value": "IC22222",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Draft PTO Header"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pto/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"ptoId\": 48\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pto/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pto",
+						"delete"
+					]
+				},
+				"description": "Delete a header"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pto/txn/view",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ptoId\": 63\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pto/txn/view",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pto",
+						"txn",
+						"view"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pto/txn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ptoTxn\": \r\n    {\r\n        \"ptoId\": \"57\",\r\n        \"casCode\": \"GTDAL\",\r\n        \"fmDate\": \"2022-07-07\",\r\n        \"toDate\": \"2022-07-10\",\r\n        \"createdBy\": \"IC2222\",\r\n        \"data1\": \"nothing\"\r\n    }\r\n,\r\n\"loggedInArmyNo\": \"IC2222\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pto/txn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pto",
+						"txn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pto/txn/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ptoId\": 59,\r\n    \"loggedInArmyNo\": \"IC3333\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pto/txn/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pto",
+						"txn",
+						"delete"
+					]
+				},
+				"description": "Delete Transaction"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pto/verify1",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ptoId\": 57,\r\n    \"loggedInArmyNo\": \"IC81111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pto/verify1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pto",
+						"verify1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pto/verify2",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ptoId\": 57,\r\n    \"loggedInArmyNo\": \"IC81111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pto/verify2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pto",
+						"verify2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pto/sendforverify",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ptoId\": 63,\r\n    \"loggedInArmyNo\": \"IC81111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pto/sendforverify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pto",
+						"sendforverify"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

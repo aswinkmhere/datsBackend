@@ -1,0 +1,128 @@
+-- Table: public.HR_TRN_ArmyPersDetails
+
+-- DROP TABLE IF EXISTS public."HR_TRN_ArmyPersDetails";
+
+CREATE TABLE IF NOT EXISTS public."HR_TRN_ArmyPersDetails"
+(
+    "PersId" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    "SUSNo" character varying(15) COLLATE pg_catalog."default" NOT NULL,
+    "PersonnelTypeId" character varying(4) COLLATE pg_catalog."default" NOT NULL,
+    "ArmyNo" character varying(15) COLLATE pg_catalog."default" NOT NULL,
+    "JCONO" character varying(20) COLLATE pg_catalog."default",
+    "PersonnelName" character varying(250) COLLATE pg_catalog."default" NOT NULL,
+    "TradeId" character varying(6) COLLATE pg_catalog."default",
+    "CorpsId" character varying(8) COLLATE pg_catalog."default",
+    "RecOffId" numeric(2,0),
+    "AuthTypeId" integer,
+    "EntryType" integer,
+    "ArmServiceId" integer NOT NULL,
+    "FirstCommisionDate" timestamp(3) without time zone,
+    "CommId" integer,
+    "CDAACno" character varying(25) COLLATE pg_catalog."default",
+    "Class" integer,
+    "Trade" integer,
+    "Nextofkin" integer,
+    "SubstantiveRankId" integer NOT NULL,
+    "SubstantiveRankDate" timestamp(3) without time zone,
+    "ActingRankId" integer,
+    "ActingRankDate" timestamp(3) without time zone,
+    "ParentArmRank" integer,
+    "SeniorityDate" timestamp(3) without time zone,
+    "Level2Id" integer NOT NULL,
+    "PersImgPath" character varying(200) COLLATE pg_catalog."default",
+    "PhotoPresent" character varying(5) COLLATE pg_catalog."default",
+    "AWLOSL" character varying(5) COLLATE pg_catalog."default",
+    "Detached" character varying(5) COLLATE pg_catalog."default",
+    "Exercise" character varying(5) COLLATE pg_catalog."default",
+    "OFFJCO" character varying(5) COLLATE pg_catalog."default",
+    "Sex" character varying(5) COLLATE pg_catalog."default",
+    "DOB" timestamp(3) without time zone,
+    "DistrictIdbirth" character varying(5) COLLATE pg_catalog."default",
+    "PlaceOfbirth" character varying(60) COLLATE pg_catalog."default",
+    "StateIdbirth" numeric(2,0),
+    "CountryIdbirth" integer,
+    "ReligionId" integer,
+    "CasteStatus" character varying(255) COLLATE pg_catalog."default",
+    "OriginClassId" character varying(15) COLLATE pg_catalog."default",
+    "MotherTongue" character varying(20) COLLATE pg_catalog."default",
+    "DomicileDistrict" character varying(20) COLLATE pg_catalog."default",
+    "DomicileState" numeric(2,0),
+    "DomicileCountry" integer,
+    "Remarks" text COLLATE pg_catalog."default",
+    "NOKName" character varying(250) COLLATE pg_catalog."default",
+    "MaritalStatus" integer,
+    "DateOfEnrolment" timestamp(3) without time zone,
+    "PresentWithUnit" boolean,
+    "AECExam" boolean,
+    "ACEExam" boolean,
+    "MRExam" boolean,
+    "FamilyPlanning" boolean,
+    "CasualtyNoFamPlng" integer,
+    "DoPart2famplnDate" timestamp(3) without time zone,
+    "DoPart2fampln" character varying(50) COLLATE pg_catalog."default",
+    "RegimentOrCorpsName" character varying(100) COLLATE pg_catalog."default",
+    "Paraded" boolean NOT NULL DEFAULT false,
+    "Picture" bytea,
+    "NOKAddressId" integer,
+    "LastP2OrderNo" character varying(35) COLLATE pg_catalog."default",
+    "LastP2OrderDate" timestamp(3) without time zone,
+    "AuthAL" smallint DEFAULT 60,
+    "AuthCL" smallint DEFAULT 30,
+    "CreatedBy" character varying(15) COLLATE pg_catalog."default",
+    "CreatedDate" timestamp(3) without time zone,
+    "UpdatedBy" character varying(15) COLLATE pg_catalog."default",
+    "UpdatedDate" timestamp(3) without time zone,
+    "ActinctBy" character varying(15) COLLATE pg_catalog."default",
+    "ActinctDate" timestamp(3) without time zone,
+    "IsActive" boolean NOT NULL DEFAULT true,
+    "AvailAL" smallint DEFAULT 0,
+    "AvailCL" smallint DEFAULT 0,
+    "AvailLeaveYear" integer DEFAULT date_part('year'::text, CURRENT_DATE),
+    "AvailedLvUpdatedby" character varying(50) COLLATE pg_catalog."default",
+    "AvailedLvUpdatedDate" timestamp(3) without time zone,
+    "AuthFurloughLv" smallint DEFAULT 60,
+    "AvailFurloughLv" smallint,
+    "AuthAAL" smallint DEFAULT 30,
+    "AvailAAL" smallint,
+    "MedCat" character varying(30) COLLATE pg_catalog."default",
+    "EntryFlag" integer DEFAULT 0,
+    "CurrentAppt" integer,
+    "DesignId" smallint,
+    "BasicDetail" character varying(10) COLLATE pg_catalog."default",
+    "GradePay" character varying(50) COLLATE pg_catalog."default",
+    "PreviousOccupation" character varying(100) COLLATE pg_catalog."default",
+    "BorderArea" character varying(100) COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."HR_TRN_ArmyPersDetails"
+    OWNER to postgres;
+
+
+-- Table: public.HR_TRN_Family_Pensioner
+
+-- DROP TABLE IF EXISTS public."HR_TRN_Family_Pensioner";
+
+CREATE TABLE IF NOT EXISTS public."HR_TRN_Family_Pensioner"
+(
+    "Mem_id" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    "MemberId" integer,
+    "MemberName" character varying(70) COLLATE pg_catalog."default",
+    "Relation_Desc" character varying(70) COLLATE pg_catalog."default",
+    "ArmyNo" character varying(50) COLLATE pg_catalog."default",
+    "DOB" character varying(50) COLLATE pg_catalog."default",
+    "MaritalStatus" character varying(50) COLLATE pg_catalog."default",
+    "Mem_Handicap" character varying(50) COLLATE pg_catalog."default",
+    "Mem_Remarks" character varying(250) COLLATE pg_catalog."default",
+    "Page_No" character varying(50) COLLATE pg_catalog."default",
+    "MobileNo" character varying(50) COLLATE pg_catalog."default",
+    "EmailId" character varying(100) COLLATE pg_catalog."default",
+    "AadharNo" character varying(50) COLLATE pg_catalog."default",
+    "PanNo" character varying(50) COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."HR_TRN_Family_Pensioner"
+    OWNER to postgres;

@@ -1,0 +1,99 @@
+-- Table: public.pto_offr_header
+
+-- DROP TABLE IF EXISTS public.pto_offr_header;
+
+CREATE TABLE IF NOT EXISTS public.pto_offr_header
+(
+    ptoid bigint NOT NULL,
+    actrank character varying(255) COLLATE pg_catalog."default",
+    actrankid integer,
+    armyno character varying(255) COLLATE pg_catalog."default",
+    cancel character(1) COLLATE pg_catalog."default",
+    createdby character varying(255) COLLATE pg_catalog."default",
+    createddate timestamp without time zone,
+    distributionids character varying(255) COLLATE pg_catalog."default",
+    draft character(1) COLLATE pg_catalog."default",
+    gp character varying(255) COLLATE pg_catalog."default",
+    hierarchyid integer,
+    isactive boolean,
+    issigned boolean,
+    lastverifiedbyauth1_armyno character varying(255) COLLATE pg_catalog."default",
+    lastverifiedbyauth1_date timestamp without time zone,
+    lastverifiedbyauth2_armyno character varying(255) COLLATE pg_catalog."default",
+    lastverifiedbyauth2_date timestamp without time zone,
+    lastptodate timestamp without time zone,
+    lastptono character varying(255) COLLATE pg_catalog."default",
+    migratedfmpreunit boolean,
+    migratedfmpreunitdate timestamp without time zone,
+    offrlastptodate timestamp without time zone,
+    offrlastptono character varying(255) COLLATE pg_catalog."default",
+    ptodate timestamp without time zone,
+    ptono character varying(255) COLLATE pg_catalog."default",
+    publishedby_armyno character varying(255) COLLATE pg_catalog."default",
+    publishedby_date timestamp without time zone,
+    signatoryid character varying(255) COLLATE pg_catalog."default",
+    subs_rank character varying(255) COLLATE pg_catalog."default",
+    subsrankid integer,
+    susno character varying(255) COLLATE pg_catalog."default",
+    totalcasualties integer,
+    updatedby character varying(255) COLLATE pg_catalog."default",
+    updateddate timestamp without time zone,
+    verify integer,
+    CONSTRAINT pto_offr_header_pkey1 PRIMARY KEY (ptoid)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.pto_offr_header
+    OWNER to master;
+
+-- Table: public.pto_trn_offr
+
+-- DROP TABLE IF EXISTS public.pto_trn_offr;
+
+CREATE TABLE IF NOT EXISTS public.pto_trn_offr
+(
+    pto_txn_id bigint NOT NULL,
+    authority character varying(255) COLLATE pg_catalog."default",
+    cancelled boolean NOT NULL DEFAULT false,
+    cascode character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    casseqno character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    certificate character varying(255) COLLATE pg_catalog."default",
+    createdby character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    createddate timestamp without time zone NOT NULL,
+    data1 character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    data2 character varying(255) COLLATE pg_catalog."default",
+    data3 character varying(255) COLLATE pg_catalog."default",
+    data4 character varying(255) COLLATE pg_catalog."default",
+    delayed character varying(255) COLLATE pg_catalog."default",
+    enclosure character varying(255) COLLATE pg_catalog."default",
+    fmdate timestamp without time zone NOT NULL,
+    isactive boolean NOT NULL DEFAULT true,
+    obsn_item character varying(255) COLLATE pg_catalog."default",
+    parenttxnno bigint,
+    ptoid bigint NOT NULL,
+    refpto character varying(255) COLLATE pg_catalog."default",
+    remark character varying(255) COLLATE pg_catalog."default",
+    rmk1 character varying(255) COLLATE pg_catalog."default",
+    rmk10 character varying(255) COLLATE pg_catalog."default",
+    rmk2 character varying(255) COLLATE pg_catalog."default",
+    rmk3 character varying(255) COLLATE pg_catalog."default",
+    rmk4 character varying(255) COLLATE pg_catalog."default",
+    rmk5 character varying(255) COLLATE pg_catalog."default",
+    rmk6 character varying(255) COLLATE pg_catalog."default",
+    rmk7 character varying(255) COLLATE pg_catalog."default",
+    rmk8 character varying(255) COLLATE pg_catalog."default",
+    rmk9 character varying(255) COLLATE pg_catalog."default",
+    stopped integer DEFAULT 0,
+    stoppeddate timestamp without time zone,
+    todate timestamp without time zone NOT NULL,
+    txnno bigint,
+    updatedby character varying(255) COLLATE pg_catalog."default",
+    updateddate timestamp without time zone,
+    CONSTRAINT pto_trn_offr_pkey2 PRIMARY KEY (pto_txn_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.pto_trn_offr
+    OWNER to master;
