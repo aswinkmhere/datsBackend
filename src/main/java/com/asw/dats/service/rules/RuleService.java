@@ -30,7 +30,7 @@ public class RuleService {
         String field = testRule.getData2();
         String whereField = testRule.getData3();
         String whereValue = testRule.getData4();
-        String msg = ArmyPersRepo.findExistingWithFour(table, field, whereField, whereValue);
+        String msg = ArmyPersRepo.findExistingWithFour(whereField, whereValue);
         if(!msg.isEmpty()){
             response.setMsg(msg);
             response.setResult(true);

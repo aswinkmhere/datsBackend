@@ -13,6 +13,7 @@ public class DatsApplication {
          SpringApplication.run(DatsApplication.class, args);
     }
 
+    
     @Bean
     public ImplicitNamingStrategy implicit() {
         return new ImplicitNamingStrategyLegacyJpaImpl();

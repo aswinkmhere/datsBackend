@@ -22,6 +22,12 @@ public class RulesController {
     @Autowired
     private RulesRepo rules;
 
+    @Autowired
+    private RuleService service;
+
+    
+    private RuleResponse resp;
+
     //GROUP
     @GetMapping(path = "/gp/view/{id}")
     @ResponseBody
@@ -79,12 +85,10 @@ public class RulesController {
     @GetMapping(path = "test")
     @ResponseBody
     public String testIt(){
-        Long x = 98L;
+        Long x = 38L;
         Rule sample = rules.findById(x).get();
-        RuleService ruleSer =  new RuleService();
-        RuleResponse resp = new RuleResponse();
-        resp = ruleSer.existsInTable(sample);
-        return resp.getMsg();
+        this.resp = service.existsInTable(sample);
+        return this.resp.getMsg();
     }
 
 }

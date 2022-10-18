@@ -3,12 +3,13 @@ package com.asw.dats.repository;
 import com.asw.dats.model.ArmyPerson;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 
 public interface ArmyPersRepository extends CrudRepository<ArmyPerson, String> {
 
     @Query(
-            value = "SELECT ?2 FROM ?1 WHERE ?3 = ?4",
+            value = "SELECT u.personnel_name FROM hr_trn_army_pers_details u WHERE :key = :val",
             nativeQuery = true)
-    String findExistingWithFour(String tableName, String resultField, String whereField, String whereValue);
+    String findExistingWithFour(@Param("key") String whereField, @Param("val") String whereValue);
 }
