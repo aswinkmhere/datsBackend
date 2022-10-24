@@ -14,14 +14,15 @@ import java.util.Date;
 public class ArmyPerson {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int pers_id;
+    @Column(name = "pers_id")
+    private int persId;
 
     @Column(nullable = false)
     private String sus_no;
     @Column(nullable = false)
     private String personnel_type_id;
     @Column(name = "army_no", nullable = false)
-    private String army_no;
+    private String armyNo;
     private String JCONO;
     @Column(nullable = false)
     private String personnel_name;
@@ -98,7 +99,7 @@ public class ArmyPerson {
     private String ActInctBy;
     private Date ActInctDate;
     @Column(name="is_active", nullable = false,columnDefinition = "boolean default true")
-    private Boolean is_active;
+    private Boolean isActive;
     @Column(columnDefinition = "smallint default 0")
     private Byte AvailAL;
     @Column(columnDefinition = "smallint default 0")

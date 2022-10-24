@@ -16,7 +16,7 @@ public class ArmyPers {
     @ResponseBody
     public String addPers(@RequestBody ArmyPerson indl){
         persRepo.save(indl);
-        return "Pers Added id:" + indl.getPers_id();
+        return "Pers Added id:" + indl.getPersId();
     }
 
     @GetMapping(path="/view")
@@ -24,7 +24,6 @@ public class ArmyPers {
     public Iterable<ArmyPerson> getAllPers(){
         return persRepo.findAll();
     }
-
 
 
 }

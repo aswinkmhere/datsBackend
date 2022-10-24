@@ -1,6 +1,7 @@
 package com.asw.dats.controller.rules;
 
 import com.asw.dats.dtos.RuleResponse;
+import com.asw.dats.dtos.TestARule;
 import com.asw.dats.model.rules.Rule;
 import com.asw.dats.model.rules.RuleGp;
 import com.asw.dats.repository.rules.RuleGpRepo;
@@ -9,6 +10,7 @@ import com.asw.dats.service.rules.RuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Optional;
 
@@ -84,11 +86,11 @@ public class RulesController {
 
     @GetMapping(path = "test")
     @ResponseBody
-    public String testIt(){
-        Long x = 38L;
-        Rule sample = rules.findById(x).get();
-        this.resp = service.existsInTable(sample);
+    public String testWithOneValue(@RequestBody TestARule tRule) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+
+        this.resp = service.existsInTable(tRule);
         return this.resp.getMsg();
     }
+
 
 }
